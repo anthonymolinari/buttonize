@@ -1,0 +1,10 @@
+./src/ui
+./dagger
+./deploy
+.git
+.gitignore
+.Dockerignore
+Dockerfile
+Jenkinsfile
+Cargo.toml
+.env

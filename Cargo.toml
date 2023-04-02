@@ -1,0 +1,23 @@
+[package]
+name = "buttonize"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-embed = "0.1.0"
+actix-web = "4.0"
+env_logger = "0.10.0"
+rust-embed = "6.6.1"
+serde = "1.0.136"
+dotenv = "0.15.0"
+actix-web-actors = "4.2.0"
+actix = "0.13.0"
+futures = "0.3.27"
+actix-cors = "0.6.4"
+
+[dependencies.mongodb]
+version = "2.2.0"
+default-features = false
+features = ["async-std-runtime"]
