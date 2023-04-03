@@ -23,7 +23,7 @@ export default function DeviceGrid() {
         .finally( () => {
             setLoading(false);
         })
-    }, [data]);
+    }, []);
 
     
     if (loading)

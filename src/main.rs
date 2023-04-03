@@ -10,12 +10,8 @@ mod models;
 mod websocket;
 
 use api::router::{
-    health,
-    get_device,
-    get_device_by_id,
-    create_device,
-    update_device,
-    delete_device,
+    init_default_router,
+    init_device_router,
 };
 use database::mongo_database::MongoRepo;
 use websocket::websocket::connect;
@@ -36,12 +32,8 @@ async fn main() -> std::io::Result<()> {
             .app_data(db_data.clone())
             .service(web::scope("/api")
                 .service(web::scope("/v1")
-                    .service(health)
-                    .service(get_device)
-                    .service(get_device_by_id)
-                    .service(create_device)
-                    .service(update_device)
-                    .service(delete_device)
+                    .configure(init_default_router)
+                    .configure(init_device_router)
                 )
             )
             .service(web::scope("/socket")
